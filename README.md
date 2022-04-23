@@ -14,4 +14,4 @@ for more information on<br/>
 
 ## Information Architecture
 
-
+![citibot drawio](https://user-images.githubusercontent.com/76547134/164945268-35bef611-3547-466d-9a19-c25dc2ff1532.png)
