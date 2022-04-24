@@ -4,8 +4,11 @@ from elasticsearch import Elasticsearch
 from fastapi.responses import JSONResponse
 from deep_translator import GoogleTranslator , single_detection
 from urllib.parse import urlparse
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-es = Elasticsearch("https://localhost:9200",ca_certs="./elasticsearch/http_ca.crt",basic_auth=("elastic","kaTcfIqAwg2aNy7VASfQ"))
+es = Elasticsearch(os.getenv("ELASTICSEARCH_URL"),ca_certs=os.getenv("CA_CERT_LOCATION"),basic_auth=(os.getenv("USERNAME"),os.getenv("PASSWORD")))
 api_key = 'fafe0d27212c70d614a07371b6cbe6ee'
 
 
