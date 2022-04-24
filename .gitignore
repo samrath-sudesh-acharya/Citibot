@@ -1,0 +1,8 @@
+*.env
+demo.py
+venv
+requiremwnts.txt
+sample.json
+elasticsearch
+.idea
+.github
