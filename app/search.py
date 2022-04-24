@@ -9,12 +9,11 @@ import os
 load_dotenv()
 
 es = Elasticsearch(os.getenv("ELASTICSEARCH_URL"),ca_certs=os.getenv("CA_CERT_LOCATION"),basic_auth=(os.getenv("USERNAME"),os.getenv("PASSWORD")))
-api_key = 'fafe0d27212c70d614a07371b6cbe6ee'
+api_key = os.getenv("API_KEY") 
 
 
 def search(query:str)->JSONResponse:
   lang = single_detection(query,api_key=api_key)
-  es = Elasticsearch("https://localhost:9200",ca_certs="./elasticsearch/http_ca.crt",basic_auth=("elastic","kaTcfIqAwg2aNy7VASfQ"))
   if lang != 'en':
     query = GoogleTranslator(source=lang,target='en').translate(query)
   print(f"THE TRANSLATED QUERY IS : {query}")
