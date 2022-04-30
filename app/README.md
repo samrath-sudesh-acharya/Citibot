@@ -14,7 +14,7 @@ GET : <API_URL>/search?q=
 ```api
 POST : <API_URL>/whatsapp/search
 ```
-> This post request handle all the query coming from whatapps users through twilio and fetch the   result from the 
+> This post request handle all the query coming from whatapps users through ```twilio``` and fetch the   result from the 
 Elasticsearch.
 
 ### Feature
