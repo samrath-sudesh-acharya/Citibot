@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/76547134/166111820-012b8ab0-5642-4ba6-
 ## How CitiBot works ?
 
 The CitiBot has a very fast suggestion system built with Elasticsearch running in Docker container. The data from Elastic Search is servered to the frontend with a help of REST API made with Fastapi framework.
-The data that elasticsearch is feed with by a crawler programed in python which collects all the data from webpage in citibank. The user's query is searched through the data collected and the best results
+The data that elasticsearch is feed with by a crawler programed in python language which collects all the data from webpage in citibank. The user's query is searched through the data collected and the best results
 are recommended back to user with whichever language the query was made with .
 
 for more information on<br/>
