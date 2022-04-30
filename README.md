@@ -9,8 +9,8 @@ The CitiBot has a very fast suggestion system built with Elasticsearch running i
 The data that elasticsearch is feed with by a crawler programed in python language which collects all the data from webpage in citibank. The user's query is searched through the data collected and the best results
 are recommended back to user with whichever language the query was made with .
 
-for more information on<br/>
-[Frontend](https://github.com/samrath-sudesh-acharya/Citibot/tree/main/chatbot-ui) | [Crawler](https://github.com/samrath-sudesh-acharya/Citibot/tree/main/crawler) | [API](https://github.com/samrath-sudesh-acharya/Citibot/tree/main/app)
+> **For more information on<br/>
+> [Frontend](https://github.com/samrath-sudesh-acharya/Citibot/tree/main/chatbot-ui) | [Crawler](https://github.com/samrath-sudesh-acharya/Citibot/tree/main/crawler) |    [API](https://github.com/samrath-sudesh-acharya/Citibot/tree/main/app)**
 
 ## Information Architecture
 
@@ -18,7 +18,7 @@ for more information on<br/>
 
 ## CitiBot in Whatsapp
 
-SInce around two billion people are using Whatsapp .Citibot can also be acessed through Whatapps to have easy usage by the consumer.This was possible by integrating our REST API to ```Twilio``` platform. 
+Since around two billion people are actively using Whatsapp.Citibot can also be acessed through Whatapps to have easy usage by the consumer.This was possible by integrating our REST API to ```Twilio``` platform. 
 
 https://user-images.githubusercontent.com/76547134/166113017-87807ee9-fb24-43eb-b3b2-769104ed188c.mp4
 
