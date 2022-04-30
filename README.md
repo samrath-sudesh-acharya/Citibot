@@ -1,7 +1,7 @@
 # CitiBot
 An AI powered chatbot for CitiBank. It supports multilingual support for a more wider reachabilty. It provides accurate sugestion for the user's query at very quick rate.
 
-https://user-images.githubusercontent.com/76547134/164944272-9c960497-d6f8-42be-9bd7-8615acba8ab6.mp4
+https://user-images.githubusercontent.com/76547134/166111820-012b8ab0-5642-4ba6-8b83-c17dd61b5265.mp4
 
 ## How CitiBot works ?
 
