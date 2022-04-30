@@ -15,3 +15,10 @@ for more information on<br/>
 ## Information Architecture
 
 ![citibot drawio](https://user-images.githubusercontent.com/76547134/164945268-35bef611-3547-466d-9a19-c25dc2ff1532.png)
+
+## CitiBot in Whatsapp
+
+SInce around two billion people are using Whatsapp .Citibot can also be acessed through Whatapps to have easy usage by the consumer.This was possible by integrating our REST API to ```Twilio``` platform. 
+
+https://user-images.githubusercontent.com/76547134/166113017-87807ee9-fb24-43eb-b3b2-769104ed188c.mp4
+
