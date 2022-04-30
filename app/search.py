@@ -1,22 +1,22 @@
 from re import S
-from turtle import title
 from elasticsearch import Elasticsearch
 from fastapi.responses import JSONResponse
-from deep_translator import GoogleTranslator , single_detection
+from deep_translator import GoogleTranslator
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 import os
 load_dotenv()
 
-es = Elasticsearch(os.getenv("ELASTICSEARCH_URL"),ca_certs=os.getenv("CA_CERT_LOCATION"),basic_auth=(os.getenv("USERNAME"),os.getenv("PASSWORD")))
+es = Elasticsearch(os.getenv("ELASTICSEARCH_URL"),ca_certs=os.getenv("CA_CERT_LOCATION"),basic_auth=(os.getenv("USER"),os.getenv("PASSWORD")))
+print(os.getenv("ELASTICSEARCH_URL"))
 api_key = os.getenv("API_KEY") 
 
 
-def search(query:str)->JSONResponse:
-  lang = single_detection(query,api_key=api_key)
+def search(query:str,lang:str)->JSONResponse:
+  
   if lang != 'en':
     query = GoogleTranslator(source=lang,target='en').translate(query)
-  print(f"THE TRANSLATED QUERY IS : {query}")
+    print(f"THE TRANSLATED QUERY IS : {query}")
   body = {
     "from": 0,
     "size": 3, 
@@ -59,8 +59,8 @@ def search(query:str)->JSONResponse:
       
       json_data = {
         "title": GoogleTranslator(source='en',target=lang).translate(raw_json['hits']['hits'][i]['_source']['title']),
-        "text": GoogleTranslator(source='en',target=lang).translate(raw_json['hits']['hits'][i]['_source']['text']),
-        "raw_text": GoogleTranslator(source='en',target=lang).translate(raw_json['hits']['hits'][i]['_source']['raw_text']),
+        "text": GoogleTranslator(source='en',target=lang).translate(raw_json['hits']['hits'][i]['_source']['text'][:500]),
+        "raw_text": GoogleTranslator(source='en',target=lang).translate(raw_json['hits']['hits'][i]['_source']['raw_text'][:500]),
         "link": built_link
       }
       
