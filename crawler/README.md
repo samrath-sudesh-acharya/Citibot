@@ -1,3 +1,29 @@
 # Crawler
 
-The crawler python script is written with Beautisoup 
+The crawler is python script is written with ```Beautifulsoup``` library, ```Trafilatura``` package and live output of the scraping of data in each page is made with ```rich``` library. 
+
+## How it works ?
+
+BeautifulSoup is used extract all the links form the sitemap and provide to the Trafilatura.Trafilatura is a python package which helps in extracting data from all webpages. It extracts data and provide in all format which include ```txt``` ```xml```,```json``` etc. We use the json format as all the data is stored in the Elasticsearch . Trafilatura library makes scraping data very easy and it very fast having a generic solution to extract any data.
+
+### What data is collected ?
+
+```json
+{
+  "title":"str",
+  "author":"str",
+  "hostname":"str",
+  "data":"str",
+  "categories":"str",
+  "tags":"str",
+  "fingerprint":"str",
+  "id":"str",
+  "license":"str",
+  "comments":"str",
+  "raw_text":"str",
+  "text":"str",
+  "source":"str",
+  "source-hostname":"str",
+  "excerpt":"str",
+}
+```
