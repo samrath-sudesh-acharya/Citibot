@@ -23,3 +23,10 @@ Since around two billion people are actively using Whatsapp.Citibot can also be 
 
 https://user-images.githubusercontent.com/76547134/166113017-87807ee9-fb24-43eb-b3b2-769104ed188c.mp4
 
+## Analysis with CitiBot
+
+With Citibot we can analysis the user based on the query they ask,in which language was the query asked ,how frequently is the query asked and many other analysis parameters.Analysis is possible by using ```Kibana``` ,with which we can create real time dashboard to monitor the query asked to Citibot and do suitable action to help the users more .
+
+Here is a dashboard we created for Citibot
+
+![data-visualization](https://user-images.githubusercontent.com/76547134/166155019-5c2f810c-7604-4847-8556-db16f6b65528.png)
