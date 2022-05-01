@@ -1,10 +1,10 @@
-from re import S
 from elasticsearch import Elasticsearch
 from fastapi.responses import JSONResponse
 from deep_translator import GoogleTranslator
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 import os
+from crawler.analytics import analytics
 load_dotenv()
 
 es = Elasticsearch(os.getenv("ELASTICSEARCH_URL"),ca_certs=os.getenv("CA_CERT_LOCATION"),basic_auth=(os.getenv("USER"),os.getenv("PASSWORD")))
@@ -12,11 +12,13 @@ print(os.getenv("ELASTICSEARCH_URL"))
 api_key = os.getenv("API_KEY") 
 
 
-def search(query:str,lang:str)->JSONResponse:
-  
+def search(query:str,lang:str,website:int,whatsapp:int)->JSONResponse:
+
+  original_query = query 
   if lang != 'en':
     query = GoogleTranslator(source=lang,target='en').translate(query)
     print(f"THE TRANSLATED QUERY IS : {query}")
+  analytics(original_query,query,lang,website,whatsapp)  
   body = {
     "from": 0,
     "size": 3, 

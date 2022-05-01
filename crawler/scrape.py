@@ -19,7 +19,7 @@ console = Console()
 
 #  Elastic configuration  
 
-es = Elasticsearch(os.getenv('ELASTICSEARCH_URL'),ca_certs=os.getenv('CA_CERT_LOCATION'),basic_auth=(os.getenv('USERNAME'),os.getenv('PASSWORD')))
+es = Elasticsearch(os.getenv('ELASTICSEARCH_URL'),ca_certs=os.getenv('CA_CERT_LOCATION'),basic_auth=(os.getenv('USER'),os.getenv('PASSWORD')))
 es.indices.create(index='page-data',ignore=400)
 
 # CONSTANTS

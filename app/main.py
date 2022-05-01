@@ -22,7 +22,8 @@ def start():
 
 @app.get("/search={query}")
 def intro(query:str):
-    result = search(query)
+    lang = single_detection(query,api_key=os.getenv("API_KEY"))
+    result = search(query,lang,1,0)
     return result
 
 @app.post("/whatsapp/search")
@@ -39,7 +40,7 @@ async def chat(
 
     response = MessagingResponse()
     lang = single_detection(Body,api_key=os.getenv("API_KEY"))
-    result = search(Body,lang)
+    result = search(Body,lang,0,1)
     link = pyshorteners.Shortener().tinyurl.short(result[0]['link'])
     response.message(GoogleTranslator(source='en',target=lang).translate("Here are some of the result i found"))
     response.message(f"*{result[0]['title']}*\n\n{link}")
